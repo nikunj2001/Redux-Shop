@@ -7,7 +7,9 @@ const Nav = () => {
             <div className="container">
                 <div className="nav__container">
                     <div className="nav__left">
+                        <Link to="/">
                         <img src="/images/logo.webp" alt="Logo" />
+                        </Link>
                     </div>
                     <div className="nav__right">
                         <Link to='/cart'>
