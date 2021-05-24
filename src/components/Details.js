@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import {useParams} from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux'
 import currencyFormatter from'currency-formatter';
-import {BsDash, BsPlus} from 'react-icons/bs'
+import {BsDash, BsPlus} from 'react-icons/bs';
 const Details = () => {
     const [quantity,setQuantity] = useState(1);
     const {id} = useParams();
@@ -14,7 +14,7 @@ const Details = () => {
     },[id])
     const decQuantity=()=>{
         if(quantity>1){
-            setQuantity(quantity-1)
+            setQuantity(quantity- 1)
         }
     }
     return (
@@ -42,7 +42,7 @@ const Details = () => {
                         <span className='dec' onClick={decQuantity}><BsDash/></span>
                         <span className='quantity'>{quantity}</span>
                         <span className='inc'  onClick={()=> setQuantity(quantity+1)}><BsPlus/></span>
-                        <button className='btn-default'  >Add to Cart</button>
+                        <button className='btn-default' onClick={()=>dispatch({type:'ADD_TO_CART',payload:{product,quantity}})}  >Add to Cart</button>
                         </div>
                             <div className="details_p">
                                 <h4>Details</h4>
